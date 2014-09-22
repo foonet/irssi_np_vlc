@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?<?vlcprint'>'?>
+<?vlc --[[
+vim:syntax=lua
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
+<  irssi.xml: VLC media player web interface for irssi media data 
+< - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
+<  Copyright (C) 2014 Ene Alin Gabriel
+]]?>
+
+<?vlc
+--package.loaded.httprequests = nil --uncomment to debug changes
+require "httprequests"
+
+httprequests.processcommands()
+
+print('<root>\n')
+
+local item = vlc.input.item()
+
+if item ~= nil then
+
+   local statusTable = httprequests.getstatus(false)
+
+   print("<time>"..statusTable['time'].."</time>");
+
+   
+   local metas = item:metas()
+   print("<title>"..httprequests.xmlString(metas['filename']).."</title>")
+end
+?>
+</root>
