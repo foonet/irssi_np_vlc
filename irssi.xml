@@ -5,6 +5,7 @@ vim:syntax=lua
 <  irssi.xml: VLC media player web interface for irssi media data 
 < - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
 <  Copyright (C) 2014 Ene Alin Gabriel
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
 ]]?>
 
 <?vlc
